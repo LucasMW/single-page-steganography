@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style style="text/css">
+      h1 {
+        font-family: sans-serif;
+        font-size: 1.5em;
+      }
+      label {
+        display:block;
+        margin: 15px 0 10px 0;
+        font-family: sans-serif;
+        font-weight: bold;
+      }
+      input {
+        display:block;
+      }
+      textarea {
+        display:block;
+      }
+      #message {
+        width: 400px;
+        height: 50px;
+      }
+      body {
+        font-family: sans-serif;
+        margin-left: 14px;
+      }
+      a {
+        text-decoration: none;
+      }
+      .hint {
+        font-size: 0.8em;
+      }
+      #encode-button {
+        display: inline;
+      }
+      #wait {
+        display: none;
+      }
+    </style>
+    <title>Steganography</title>
+  </head>
+  <body>
+    <h1>Hide a message</h1>
+
+    <img src="image.jpg" />
+    <label for="message">Message to hide</label>
+    <textarea id="message"></textarea>
+    <label for="encode-password">Shared password</label>
+    <input type="password" id="encode-password" value=""></input>
+    <p class="hint">After creating the image upload it to any album or post it on a friends wall for them to receive.</p>
+    <input type="submit" value="Create and download" id="encode-button"></input>
+    <span class="hint" id="wait">Please wait...</span>
+    <h1>Reveal messagae from image</h1>
+    <label for="decode-password">Shared password</label>
+    <input type="password" id="decode-password" value=""></input>
+    <input type="file" id="input-file" />
+    <input type="submit" id="decode-button" value="Reveal secret message"  />
+    <span class="hint" id="decoded-message"></span>
+
+
+    <!-- Reference Javascript -->
+    <script src="js/lib/jpg_encoder.js"></script>
+    <script src="js/lib/jpg_decoder.js"></script>
+    <script src="js/lib/seedrandom.js"></script>
+    <script src="js/lib/mlbc.js"></script>
+    <script src="js/lib/dct.js"></script>
+    <script src="js/main.js"></script>
+
+  </body>
+</html>
